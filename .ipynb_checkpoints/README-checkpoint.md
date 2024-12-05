@@ -4,7 +4,7 @@ By Alex Collier
 
 <body>
 <section id="dataset-introduction">
-  <h3>Introduction to the Dataset and Prediction Question</h3>
+  <h2>Introduction to the Dataset and Prediction Question</h2>
   <p>
     The dataset we are using focuses on <strong>major power outages</strong> across various regions. 
     It contains detailed records of outages, including the causes, durations, affected populations, 
@@ -146,7 +146,7 @@ By Alex Collier
 </section>
 
 <section id="Prediction">
-    <h3>Prediction Problem and Type</h3>
+    <h2>Prediction Problem and Type</h2>
 <p>This is a <strong>regression problem</strong>, as the goal is to predict the <strong>duration of a power outage</strong> (a continuous variable) based on various characteristics of the region, the cause of the outage, and population-specific metrics.</p>
 
 <h3>Response Variable</h3>
@@ -163,7 +163,7 @@ By Alex Collier
 </section>
 
 <section id="baseline">
-    <h3>Baseline Model</h3>
+    <h2>Baseline Model</h2>
 
 <p>
 My model is a multiclass classifier using the features <strong>CLIMATE.REGION</strong> and <strong>OUTAGE.DURATION</strong> to predict the cause of a major outage. This information is essential for energy companies and policymakers to better understand the underlying causes of outages and allocate resources effectively to mitigate future disruptions.
