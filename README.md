@@ -132,11 +132,17 @@ By Alex Collier
     This bar chart displays the distribution of power outages by their cause categories. I wanted to see the distribution of major cuases of power outages.
 </p>
 <iframe src="https://Akcol.github.io/Power_Outage_Prediction/Images/outage_by_cat.html" width="100%" height="500px" frameborder="0"></iframe>
-    <h3>Bivariate: Outages by Cause Category</h3>
+    <h3>Bivariate: Outage Duration by Cause Category</h3>
     <p>
  The plot below shows the relation between outage duration and cause category. It shows that outages with the longest duration tend to be from a fuel supply emergency.
 </p>
     <iframe src="https://Akcol.github.io/Power_Outage_Prediction/Images/outage_dur_cat.html" width="100%" height="500px" frameborder="0"></iframe>
+    <h3>Interesting Aggregates: Average Outage Duration by Climate Region and Cause Category</h3>
+    <p>
+    This heatmap displays the average outage duration across various climate regions and cause categories. It highlights that outages caused by severe weather in the
+    East North Central region tend to last significantly longer, emphasizing the need for targeted infrastructure resilience strategies in that area.
+    </p>
+<iframe src="https://Akcol.github.io/Power_Outage_Prediction/Images/avg_out_dur_CR_CC.html" width="100%" height="500px" frameborder="0"></iframe>
 
 </section>
 
