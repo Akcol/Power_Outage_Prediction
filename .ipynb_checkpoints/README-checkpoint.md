@@ -129,9 +129,14 @@ By Alex Collier
    <h2>Data Exploration</h2> 
     <h3>Univariate: Outages by Cause Category</h3>
 <p>
-    This bar chart displays the distribution of power outages by their cause categories. Severe weather is the leading cause, accounting for a significantly higher number of outages compared to other categories, followed by intentional attacks. Other causes, such as system operability disruptions, public appeal, and equipment failure, are far less frequent. This trend highlights the importance of focusing on weather-related preparedness and mitigation strategies to address the most frequent cause of power outages.
+    This bar chart displays the distribution of power outages by their cause categories. I wanted to see the distribution of major cuases of power outages.
 </p>
 <iframe src="https://Akcol.github.io/Power_Outage_Prediction/Images/outage_by_cat.html" width="100%" height="500px" frameborder="0"></iframe>
+    <h3>Bivariate: Outages by Cause Category</h3>
+    <p>
+ The plot below shows the relation between outage duration and cause category. It shows that outages with the longest duration tend to be from a fuel supply emergency.
+</p>
+    <iframe src="https://Akcol.github.io/Power_Outage_Prediction/Images/outage_dur_cat.html" width="100%" height="500px" frameborder="0"></iframe>
 
 </section>
 
