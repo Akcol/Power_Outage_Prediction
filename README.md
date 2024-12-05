@@ -101,18 +101,27 @@ By Alex Collier
   </table>
 </section>
 
-### Data Cleaning and Preprocessing
-
-The following steps were undertaken to clean and preprocess the dataset, ensuring its readiness for analysis and modeling:
-
-1. **Handling Missing Values**
-    - **Action Taken:** Missing values in critical columns such as `CAUSE.CATEGORY`, `OUTAGE.DURATION`, and `CUSTOMERS.AFFECTED` were either filled with appropriate imputed values (like median for numeric columns) or removed if imputation wasn't feasible.
-    - **Reasoning:** Missing values could bias analyses, especially when predicting causes or durations of outages. Imputation or removal ensured the integrity of the dataset for training machine learning models.
-    - **Effect on Analysis:** Reduced the dataset size slightly, but ensured clean input for models and accurate results.
-
-2. **Correcting Data Types**
-    - **Action Taken:** Converted columns like `OUTAGE.START.DATE` and `OUTAGE.START.TIME` into a single datetime column (`OUTAGE.START`). Similarly, `OUTAGE.RESTORATION` was created as a combined column.
-    - **Reasoning:** Ensured that timestamps could be used effectively in duration calculations and time-based analyses.
-    - **Effect on Analysis:** Enabled easy calculations of `OUTAGE.DURATION` by subtracting `OUTAGE.START` from `OUTAGE.RESTORATION`.
-    <iframe src="path/to/head_output.html" width="100%" height="300px" frameborder="0"></iframe>
+<section id="data-cleaning">
+    <h2>Data Cleaning and Preprocessing</h2>
+    <p>The following steps were undertaken to clean and preprocess the dataset, ensuring its readiness for analysis and modeling:</p>
+    <ol>
+        <li>
+            <strong>Handling Missing Values</strong>
+            <ul>
+                <li><strong>Action Taken:</strong> Missing values in critical columns such as <code>CAUSE.CATEGORY</code>, <code>OUTAGE.DURATION</code>, and <code>CUSTOMERS.AFFECTED</code> were either filled with appropriate imputed values (like median for numeric columns) or removed if imputation wasn't feasible.</li>
+                <li><strong>Reasoning:</strong> Missing values could bias analyses, especially when predicting causes or durations of outages. Imputation or removal ensured the integrity of the dataset for training machine learning models.</li>
+                <li><strong>Effect on Analysis:</strong> Reduced the dataset size slightly, but ensured clean input for models and accurate results.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Correcting Data Types</strong>
+            <ul>
+                <li><strong>Action Taken:</strong> Converted columns like <code>OUTAGE.START.DATE</code> and <code>OUTAGE.START.TIME</code> into a single datetime column (<code>OUTAGE.START</code>). Similarly, <code>OUTAGE.RESTORATION</code> was created as a combined column.</li>
+                <li><strong>Reasoning:</strong> Ensured that timestamps could be used effectively in duration calculations and time-based analyses.</li>
+                <li><strong>Effect on Analysis:</strong> Enabled easy calculations of <code>OUTAGE.DURATION</code> by subtracting <code>OUTAGE.START</code> from <code>OUTAGE.RESTORATION</code>.</li>
+            </ul>
+        </li>
+    </ol>
+</section>
+    <iframe src="head_output.html" width="100%" height="300px" frameborder="0"></iframe>
 </body>
