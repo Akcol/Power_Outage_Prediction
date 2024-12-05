@@ -4,7 +4,7 @@ By Alex Collier
 
 <body>
 <section id="dataset-introduction">
-  <h2>Introduction to the Dataset and Prediction Question</h2>
+  <h3>Introduction to the Dataset and Prediction Question</h3>
   <p>
     The dataset we are using focuses on <strong>major power outages</strong> across various regions. 
     It contains detailed records of outages, including the causes, durations, affected populations, 
@@ -23,7 +23,7 @@ By Alex Collier
   </p>
 </section>
 <section id="data-description">
-  <h2>Dataset Variables and Descriptions</h2>
+  <h3>Dataset Variables and Descriptions</h3>
     <p>The original DataFrame contains 1534 rows, corresponding to 1534 outages, and 57 columns. Listed below are just some of the columns provided to us.</p>
   <table>
     <thead>
@@ -101,5 +101,28 @@ By Alex Collier
   </table>
 </section>
 
+<section id="data-cleaning">
+    <h2>Data Cleaning and Preprocessing</h2>
+    <p>The following steps were undertaken to clean and preprocess the dataset, ensuring its readiness for analysis and modeling:</p>
+
+    <ol>
+        <li>
+            <strong>Handling Missing Values</strong>
+            <ul>
+                <li><strong>Action Taken:</strong> Missing values in critical columns such as <code>CAUSE.CATEGORY</code>, <code>OUTAGE.DURATION</code>, and <code>CUSTOMERS.AFFECTED</code> were either filled with appropriate imputed values (like median for numeric columns) or removed if imputation wasn't feasible.</li>
+                <li><strong>Reasoning:</strong> Missing values could bias analyses, especially when predicting causes or durations of outages. Imputation or removal ensured the integrity of the dataset for training machine learning models.</li>
+                <li><strong>Effect on Analysis:</strong> Reduced the dataset size slightly, but ensured clean input for models and accurate results.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Correcting Data Types</strong>
+            <ul>
+                <li><strong>Action Taken:</strong> Converted columns like <code>OUTAGE.START.DATE</code> and <code>OUTAGE.START.TIME</code> into a single datetime column (<code>OUTAGE.START</code>). Similarly, <code>OUTAGE.RESTORATION</code> was created as a combined column.</li>
+                <li><strong>Reasoning:</strong> Ensured that timestamps could be used effectively in duration calculations and time-based analyses.</li>
+                <li><strong>Effect on Analysis:</strong> Enabled easy calculations of <code>OUTAGE.DURATION</code> by subtracting <code>OUTAGE.START</code> from <code>OUTAGE.RESTORATION</code>.</li>
+            </ul>
+        </li>
+    </ol>
+</section>
 
 </body>
