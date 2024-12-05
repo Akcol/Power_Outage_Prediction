@@ -240,7 +240,7 @@ The performance of this model was moderate, with an overall accuracy of <strong>
     The inclusion of advanced features and hyperparameter tuning addressed critical nuances in the data, leading to substantial performance gains. 
     These insights can guide policymakers and utility companies in targeting infrastructure improvements and disaster mitigation strategies.
 </p>
-<iframe src="https://Akcol.github.io/Power_Outage_Prediction/Images/confusion_matrix-Copy1.png" width="100%" height="300px" frameborder="0"></iframe>
+<image src="https://Akcol.github.io/Power_Outage_Prediction/Images/confusion_matrix-Copy1.png" width="100%" height="300px" frameborder="0"></image>
 
 </section>
 
