@@ -143,7 +143,23 @@ By Alex Collier
     East North Central region tend to last significantly longer, emphasizing the need for targeted infrastructure resilience strategies in that area.
     </p>
 <iframe src="https://Akcol.github.io/Power_Outage_Prediction/Images/avg_out_dur_CR_CC.html" width="100%" height="300px" frameborder="0"></iframe>
+</section>
 
+<section id="Prediction">
+    <h2>Prediction Problem and Type</h2>
+<p>This is a <strong>regression problem</strong>, as the goal is to predict the <strong>duration of a power outage</strong> (a continuous variable) based on various characteristics of the region, the cause of the outage, and population-specific metrics.</p>
+
+<h2>Response Variable</h2>
+<p>The response variable is <code>OUTAGE.DURATION</code>, which measures the length of a power outage in minutes. This variable was chosen because understanding and predicting outage duration is crucial for resource allocation, planning restoration efforts, and minimizing disruption caused by power outages.</p>
+
+<h2>Metric for Evaluation</h2>
+<p>The primary evaluation metric is <strong>Mean Absolute Error (MAE)</strong>, as it provides an interpretable measure of the average error in minutes, which is directly relevant to stakeholders. MAE was chosen over other metrics (e.g., RMSE) because it is less sensitive to large errors and better captures the typical error magnitude.</p>
+
+<h2>Features Used for Prediction</h2>
+<p>Features included in the model are <code>CAUSE.CATEGORY</code>, <code>CLIMATE.REGION</code>, <code>NERC.REGION</code>, <code>POPULATION</code>, and other region- or cause-specific metrics such as <code>POPDEN_URBAN</code> and <code>POPDEN_RURAL</code>. These features are selected because they are available at the time of prediction and provide critical context about the outage's circumstances. Features like restoration times are excluded as they would not be known before the outage occurs.</p>
+
+<h2>Hypothesis</h2>
+<p>The hypothesis is that the duration of a power outage can be accurately predicted using information about the region's climate, population metrics, and the cause of the outage. For instance, outages caused by severe weather in densely populated areas might have longer durations due to infrastructure challenges and resource constraints.</p>
 </section>
 
 </body>
