@@ -188,40 +188,57 @@ The performance of this model was moderate, with an overall accuracy of <strong>
     <h2>Final Model</h2>
 
 <p>
-    My final model is a multiclass classifier that predicts the cause of major power outages based on advanced features: 
-    <code>CLIMATE.REGION</code>, <code>OUTAGE.DURATION</code>, <code>DEMAND.LOSS.MW</code>, <code>POP_DENSITY</code>, 
-    and an engineered interaction feature (<code>INTERACTION</code>). These features were chosen to incorporate both the 
-    environmental and socio-economic factors impacting outages, improving the model's ability to differentiate between causes. 
-    For example, the <code>INTERACTION</code> feature captures relationships between population density and energy demand losses, 
-    adding depth to the predictions.
+    My final model is a multiclass classifier designed to predict the cause of major power outages. I incorporated advanced features: 
+    <code>CLIMATE.REGION</code>, <code>OUTAGE.DURATION</code>, <code>DEMAND.LOSS.MW</code>, <code>POP_DENSITY</code>, and an engineered 
+    interaction feature (<code>INTERACTION</code>). These features were selected based on their relevance to the data-generating process 
+    and their potential to enhance the model’s predictive capabilities. For instance:
 </p>
 
-<p><strong>The features are:</strong></p>
 <ul>
-    <li><strong>CLIMATE.REGION</strong> (nominal): Represents geographic climate variations that influence outage causes.</li>
-    <li><strong>OUTAGE.DURATION</strong> (quantitative): Reflects the length of outages, which varies depending on the cause and available resources.</li>
-    <li><strong>DEMAND.LOSS.MW</strong> (quantitative): Highlights the scale of the outage's energy impact.</li>
-    <li><strong>POP_DENSITY</strong> (quantitative): Accounts for the effects of population density on infrastructure and recovery times.</li>
-    <li><strong>INTERACTION</strong> (quantitative): Combines <code>DEMAND.LOSS.MW</code> and <code>POP_DENSITY</code> to represent complex relationships between energy demand and population.</li>
+    <li><strong>CLIMATE.REGION</strong>: Nominal feature capturing geographic climate variations that influence the types of outage causes prevalent in a region.</li>
+    <li><strong>OUTAGE.DURATION</strong>: Quantitative feature reflecting the length of outages, which varies based on the cause and recovery resources.</li>
+    <li><strong>DEMAND.LOSS.MW</strong>: Quantitative feature representing the scale of energy loss, providing insights into the severity of the outage.</li>
+    <li><strong>POP_DENSITY</strong>: Quantitative feature accounting for how population density affects infrastructure stress and recovery times.</li>
+    <li><strong>INTERACTION</strong>: Engineered feature combining <code>DEMAND.LOSS.MW</code> and <code>POP_DENSITY</code>, highlighting the interplay between energy demand and population concentration.</li>
 </ul>
 
 <p>
-    The response variable remains <code>CAUSE.CATEGORY</code>, which includes categories such as "severe weather," "intentional attack," 
-    and "equipment failure." This allows for multiclass classification to provide detailed insights into outage causes.
+    These features improved the model by aligning closely with the real-world factors influencing power outages. For example, densely populated 
+    regions with high energy demands may experience longer durations during severe weather events due to infrastructure challenges. Adding features 
+    that capture these relationships enhances the model's ability to distinguish between outage causes effectively.
+</p>
+
+<h3>Modeling Algorithm and Hyperparameter Selection</h3>
+<p>
+    I selected a <strong>Random Forest Classifier</strong> for the final model due to its ability to handle mixed feature types and capture non-linear relationships. 
+    Hyperparameter tuning was performed using <code>GridSearchCV</code> to identify the best configuration. The optimal hyperparameters were:
+</p>
+<ul>
+    <li><strong>max_depth:</strong> None (allowed unlimited tree growth to capture complex patterns).</li>
+    <li><strong>n_estimators:</strong> 200 (increased the number of trees for better ensemble stability).</li>
+    <li><strong>min_samples_split:</strong> 2 (ensured fine-grained splits for detailed decision boundaries).</li>
+</ul>
+<p>
+    These hyperparameters improved the model's ability to generalize without overfitting, allowing it to perform well across all classes.
+</p>
+
+<h3>Performance Comparison</h3>
+<p>
+    The Final Model achieved an accuracy of <strong>0.94</strong>, a significant improvement over the Baseline Model's accuracy of <strong>0.65</strong>. 
+    The F1 score for most classes exceeded 0.85, with severe weather achieving a near-perfect score of 0.97. This demonstrates the model's 
+    enhanced ability to distinguish between outage causes, even in less frequent categories like "fuel supply emergency" and "islanding."
+</p>
+
+<h3>Visualization of Performance</h3>
+<p>
+    A confusion matrix provides a detailed view of the model’s performance across all classes. The matrix highlights high true positive 
+    rates for dominant classes like "severe weather" and "intentional attack," while smaller categories such as "equipment failure" are 
+    correctly predicted in most cases. This reinforces the model's robustness in handling multiclass classification tasks.
 </p>
 
 <p>
-    The final model achieved an <strong>accuracy of 0.94</strong>, significantly improving over the baseline. The F1 score for most 
-    categories was above 0.85, with severe weather achieving a near-perfect score of 0.97. These results suggest the model captures 
-    the underlying relationships between the features and the outage causes effectively. Additionally, hyperparameter tuning (e.g., 
-    increasing the number of estimators and allowing unlimited tree depth) contributed to these improvements by better capturing 
-    complex decision boundaries.
-</p>
-
-<p>
-    The inclusion of advanced features and engineered interactions likely contributed to this improvement by addressing nuances 
-    such as how severe weather affects densely populated regions with high energy demands. These insights are crucial for policymakers 
-    and utility companies to mitigate risks and optimize resources.
+    The inclusion of advanced features and hyperparameter tuning addressed critical nuances in the data, leading to substantial performance gains. 
+    These insights can guide policymakers and utility companies in targeting infrastructure improvements and disaster mitigation strategies.
 </p>
 
 </section>
