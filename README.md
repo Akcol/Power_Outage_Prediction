@@ -182,6 +182,47 @@ The target variable was <strong>CAUSE.CATEGORY</strong>, which includes categori
 <p>
 The performance of this model was moderate, with an overall accuracy of <strong>65%</strong> on the test set. The model performed well for large categories like <strong>Severe Weather</strong> and <strong>Intentional Attack</strong> but struggled with less frequent causes such as <strong>Equipment Failure</strong> and <strong>Fuel Supply Emergency</strong>. While this provides a good starting point, improvements are needed to handle class imbalances and better predict underrepresented categories.
 </p>
+</section>
+
+<section id="Final Model">
+    <h2>Final Model</h2>
+
+<p>
+    My final model is a multiclass classifier that predicts the cause of major power outages based on advanced features: 
+    <code>CLIMATE.REGION</code>, <code>OUTAGE.DURATION</code>, <code>DEMAND.LOSS.MW</code>, <code>POP_DENSITY</code>, 
+    and an engineered interaction feature (<code>INTERACTION</code>). These features were chosen to incorporate both the 
+    environmental and socio-economic factors impacting outages, improving the model's ability to differentiate between causes. 
+    For example, the <code>INTERACTION</code> feature captures relationships between population density and energy demand losses, 
+    adding depth to the predictions.
+</p>
+
+<p><strong>The features are:</strong></p>
+<ul>
+    <li><strong>CLIMATE.REGION</strong> (nominal): Represents geographic climate variations that influence outage causes.</li>
+    <li><strong>OUTAGE.DURATION</strong> (quantitative): Reflects the length of outages, which varies depending on the cause and available resources.</li>
+    <li><strong>DEMAND.LOSS.MW</strong> (quantitative): Highlights the scale of the outage's energy impact.</li>
+    <li><strong>POP_DENSITY</strong> (quantitative): Accounts for the effects of population density on infrastructure and recovery times.</li>
+    <li><strong>INTERACTION</strong> (quantitative): Combines <code>DEMAND.LOSS.MW</code> and <code>POP_DENSITY</code> to represent complex relationships between energy demand and population.</li>
+</ul>
+
+<p>
+    The response variable remains <code>CAUSE.CATEGORY</code>, which includes categories such as "severe weather," "intentional attack," 
+    and "equipment failure." This allows for multiclass classification to provide detailed insights into outage causes.
+</p>
+
+<p>
+    The final model achieved an <strong>accuracy of 0.94</strong>, significantly improving over the baseline. The F1 score for most 
+    categories was above 0.85, with severe weather achieving a near-perfect score of 0.97. These results suggest the model captures 
+    the underlying relationships between the features and the outage causes effectively. Additionally, hyperparameter tuning (e.g., 
+    increasing the number of estimators and allowing unlimited tree depth) contributed to these improvements by better capturing 
+    complex decision boundaries.
+</p>
+
+<p>
+    The inclusion of advanced features and engineered interactions likely contributed to this improvement by addressing nuances 
+    such as how severe weather affects densely populated regions with high energy demands. These insights are crucial for policymakers 
+    and utility companies to mitigate risks and optimize resources.
+</p>
 
 </section>
 
