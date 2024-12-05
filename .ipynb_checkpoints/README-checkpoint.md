@@ -146,20 +146,43 @@ By Alex Collier
 </section>
 
 <section id="Prediction">
-    <h2>Prediction Problem and Type</h2>
+    <h3>Prediction Problem and Type</h3>
 <p>This is a <strong>regression problem</strong>, as the goal is to predict the <strong>duration of a power outage</strong> (a continuous variable) based on various characteristics of the region, the cause of the outage, and population-specific metrics.</p>
 
-<h2>Response Variable</h2>
+<h3>Response Variable</h3>
 <p>The response variable is <code>OUTAGE.DURATION</code>, which measures the length of a power outage in minutes. This variable was chosen because understanding and predicting outage duration is crucial for resource allocation, planning restoration efforts, and minimizing disruption caused by power outages.</p>
 
-<h2>Metric for Evaluation</h2>
+<h3>Metric for Evaluation</h3>
 <p>The primary evaluation metric is <strong>Mean Absolute Error (MAE)</strong>, as it provides an interpretable measure of the average error in minutes, which is directly relevant to stakeholders. MAE was chosen over other metrics (e.g., RMSE) because it is less sensitive to large errors and better captures the typical error magnitude.</p>
 
-<h2>Features Used for Prediction</h2>
+<h3>Features Used for Prediction</h3>
 <p>Features included in the model are <code>CAUSE.CATEGORY</code>, <code>CLIMATE.REGION</code>, <code>NERC.REGION</code>, <code>POPULATION</code>, and other region- or cause-specific metrics such as <code>POPDEN_URBAN</code> and <code>POPDEN_RURAL</code>. These features are selected because they are available at the time of prediction and provide critical context about the outage's circumstances. Features like restoration times are excluded as they would not be known before the outage occurs.</p>
 
-<h2>Hypothesis</h2>
+<h3>Hypothesis</h3>
 <p>The hypothesis is that the duration of a power outage can be accurately predicted using information about the region's climate, population metrics, and the cause of the outage. For instance, outages caused by severe weather in densely populated areas might have longer durations due to infrastructure challenges and resource constraints.</p>
+</section>
+
+<section id="baseline">
+    <h3>Baseline Model</h3>
+
+<p>
+My model is a multiclass classifier using the features <strong>CLIMATE.REGION</strong> and <strong>OUTAGE.DURATION</strong> to predict the cause of a major outage. This information is essential for energy companies and policymakers to better understand the underlying causes of outages and allocate resources effectively to mitigate future disruptions.
+</p>
+
+<p><strong>The features are:</strong></p>
+<ul>
+    <li><strong>CLIMATE.REGION</strong> (nominal): Represents the geographic climate region of the outage, which can influence the type of weather or environmental factors leading to outages.</li>
+    <li><strong>OUTAGE.DURATION</strong> (quantitative): Measures the length of the outage in hours, providing insight into the severity of the event and potentially the type of cause.</li>
+</ul>
+
+<p>
+The target variable was <strong>CAUSE.CATEGORY</strong>, which includes categories such as "severe weather," "intentional attack," and others. These were left as-is to allow the model to handle multiclass classification.
+</p>
+
+<p>
+The performance of this model was moderate, with an overall accuracy of <strong>65%</strong> on the test set. The model performed well for large categories like <strong>Severe Weather</strong> and <strong>Intentional Attack</strong> but struggled with less frequent causes such as <strong>Equipment Failure</strong> and <strong>Fuel Supply Emergency</strong>. While this provides a good starting point, improvements are needed to handle class imbalances and better predict underrepresented categories.
+</p>
+
 </section>
 
 </body>
