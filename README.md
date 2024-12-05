@@ -101,7 +101,7 @@ By Alex Collier
   </table>
 </section>
 
-## Data Cleaning and Preprocessing
+### Data Cleaning and Preprocessing
 
 The following steps were undertaken to clean and preprocess the dataset, ensuring its readiness for analysis and modeling:
 
@@ -114,5 +114,5 @@ The following steps were undertaken to clean and preprocess the dataset, ensurin
     - **Action Taken:** Converted columns like `OUTAGE.START.DATE` and `OUTAGE.START.TIME` into a single datetime column (`OUTAGE.START`). Similarly, `OUTAGE.RESTORATION` was created as a combined column.
     - **Reasoning:** Ensured that timestamps could be used effectively in duration calculations and time-based analyses.
     - **Effect on Analysis:** Enabled easy calculations of `OUTAGE.DURATION` by subtracting `OUTAGE.START` from `OUTAGE.RESTORATION`.
-
+    <iframe src="path/to/head_output.html" width="100%" height="300px" frameborder="0"></iframe>
 </body>
