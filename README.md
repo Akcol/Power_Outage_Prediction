@@ -121,7 +121,7 @@ By Alex Collier
                 <li><strong>Effect on Analysis:</strong> Enabled easy calculations of <code>OUTAGE.DURATION</code> by subtracting <code>OUTAGE.START</code> from <code>OUTAGE.RESTORATION</code>.</li>
             </ul>
         </li>
-            <iframe src="/head_output.html" width="100%" height="300px" frameborder="0"></iframe>
+            <iframe src="head_output.html" width="100%" height="300px" frameborder="0"></iframe>
     </ol>
 </section>
 </body>
