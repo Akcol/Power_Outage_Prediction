@@ -24,6 +24,7 @@ By Alex Collier
 </section>
 <section id="data-description">
   <h2>Dataset Variables and Descriptions</h2>
+    <p>The original DataFrame contains 1534 rows, corresponding to 1534 outages, and 57 columns. Listed below are just some of the columns provided to us.</p>
   <table>
     <thead>
       <tr>
@@ -32,10 +33,6 @@ By Alex Collier
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <td>OBS</td>
-        <td>Observation number or unique identifier for each record.</td>
-      </tr>
       <tr>
         <td>YEAR</td>
         <td>Year when the outage occurred.</td>
@@ -51,10 +48,6 @@ By Alex Collier
       <tr>
         <td>POSTAL.CODE</td>
         <td>Two-letter postal abbreviation for the state.</td>
-      </tr>
-      <tr>
-        <td>NERC.REGION</td>
-        <td>NERC region where the outage occurred.</td>
       </tr>
       <tr>
         <td>CLIMATE.REGION</td>
