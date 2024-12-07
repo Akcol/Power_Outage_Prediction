@@ -214,9 +214,9 @@ The performance of this model was moderate, with an overall accuracy of <strong>
     Hyperparameter tuning was performed using <code>GridSearchCV</code> to identify the best configuration. The optimal hyperparameters were:
 </p>
 <ul>
-    <li><strong>max_depth:</strong> None (allowed unlimited tree growth to capture complex patterns).</li>
-    <li><strong>n_estimators:</strong> 200 (increased the number of trees for better ensemble stability).</li>
-    <li><strong>min_samples_split:</strong> 2 (ensured fine-grained splits for detailed decision boundaries).</li>
+    <li><strong>max_depth:</strong> 12 (allowed 12 tree growth to capture complex patterns).</li>
+    <li><strong>n_estimators:</strong> 100 (increased the number of trees for better ensemble stability).</li>
+    <li><strong>min_samples_split:</strong> 5 (ensured fine-grained splits for detailed decision boundaries).</li>
 </ul>
 <p>
     These hyperparameters improved the model's ability to generalize without overfitting, allowing it to perform well across all classes.
@@ -243,5 +243,4 @@ The performance of this model was moderate, with an overall accuracy of <strong>
 <image src="https://Akcol.github.io/Power_Outage_Prediction/Images/confusion_matrix-Copy1.png" width="100%" height="300px" frameborder="0"></image>
 
 </section>
-
 </body>
