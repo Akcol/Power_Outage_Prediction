@@ -195,7 +195,7 @@ The performance of this model was moderate, with an overall accuracy of <strong>
 </p>
 
 <ul>
-    <li><strong>CLIMATE.REGION</strong>: Nominal feature capturing geographic climate variations that influence the types of outage causes prevalent in a region.</li>
+    <li><strong>CLIMATE.REGION</strong>: Nominal feature capturing geographic climate variations that influence the types of outage causes prevalent in each region.</li>
     <li><strong>OUTAGE.DURATION</strong>: Quantitative feature reflecting the length of outages, which varies based on the cause and recovery resources.</li>
     <li><strong>DEMAND.LOSS.MW</strong>: Quantitative feature representing the scale of energy loss, providing insights into the severity of the outage.</li>
     <li><strong>POP_DENSITY</strong>: Quantitative feature accounting for how population density affects infrastructure stress and recovery times.</li>
