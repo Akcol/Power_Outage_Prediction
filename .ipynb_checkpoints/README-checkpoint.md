@@ -214,7 +214,7 @@ The performance of this model was moderate, with an overall accuracy of <strong>
     Hyperparameter tuning was performed using <code>GridSearchCV</code> to identify the best configuration. The optimal hyperparameters were:
 </p>
 <ul>
-    <li><strong>max_depth:</strong> 12 (allowed 12 tree growth to capture complex patterns to avoid over fitting).</li>
+    <li><strong>max_depth:</strong> 25 (allowed 25 tree growth to capture complex patterns to avoid over fitting).</li>
     <li><strong>n_estimators:</strong> 100 (increased the number of trees for better ensemble stability).</li>
     <li><strong>min_samples_split:</strong> 5 (ensured fine-grained splits for detailed decision boundaries).</li>
 </ul>
@@ -224,8 +224,8 @@ The performance of this model was moderate, with an overall accuracy of <strong>
 
 <h3>Performance Comparison</h3>
 <p>
-    The Final Model achieved an accuracy of <strong> 0.8716</strong>, a significant improvement over the Baseline Model's accuracy of <strong>0.65</strong>. 
-    The F1 score for most classes exceeded 0.85, with severe weather achieving a near-perfect score of 0.97. This demonstrates the model's 
+    The Final Model achieved an accuracy of <strong> 0.86</strong>, a significant improvement over the Baseline Model's accuracy of <strong>0.65</strong>. 
+    The F1 score for most classes exceeded 0.85. This demonstrates the model's 
     enhanced ability to distinguish between outage causes, even in less frequent categories like "fuel supply emergency" and "islanding."
 </p>
 
