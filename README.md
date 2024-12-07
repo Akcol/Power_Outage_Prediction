@@ -12,7 +12,7 @@ By Alex Collier
     power outages and the severity of their impacts.
   </p>
   <p>
-    Our central question is: <em>"What causes most major power outages, and can we predict the most likely cause of an outage?"</em>
+    My central question is: <em>"What causes most major power outages, and can we predict the most likely cause of an outage?"</em>
   </p>
   <p>
     Understanding the root causes of power outages and predicting them is crucial for improving power grid 
